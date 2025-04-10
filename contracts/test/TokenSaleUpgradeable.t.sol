@@ -2,8 +2,9 @@
 pragma solidity 0.8.11;
 
 import "ds-test/test.sol";
-import "forge-std/Vm.sol";
-import "forge-std/stdlib.sol";
+import "forge-std/Test.sol";
+import "forge-std/StdCheats.sol";
+//import "forge-std/stdlib.sol";
 
 import "./utils/StdERC20.sol";
 import "./utils/StdProxy.sol";
@@ -23,7 +24,7 @@ contract TestToken is MockERC20 {
     constructor() MockERC20("Test Token", "TEST", 8) {}
 }
 
-contract TokenSaleUpgradeableTest is DSTest, stdCheats, StdProxy {
+contract TokenSaleUpgradeableTest is DSTest, StdCheats, StdProxy {
     /// ==============
     /// ===== Vm =====
     /// ==============
